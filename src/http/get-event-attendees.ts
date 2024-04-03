@@ -10,6 +10,8 @@ export async function getEventAttendees(app: FastifyInstance): Promise<void> {
 		"/events/:eventId/attendees",
 		{
 			schema: {
+				summary: "Get event attendees",
+				tags: ["event"],
 				params: t.Object({ eventId: t.String() }),
 				querystring: t.Object({
 					pageIndex: t.Nullish(t.Number(t.String())),
@@ -23,7 +25,7 @@ export async function getEventAttendees(app: FastifyInstance): Promise<void> {
 								name: t.String(),
 								email: t.String(),
 								createdAt: t.Nullable(t.Number()),
-								checkedInAt: t.Nullable(t.Number())
+								checkedInAt: t.Nullable(t.Number()),
 							}),
 						),
 					}),
@@ -54,8 +56,6 @@ export async function getEventAttendees(app: FastifyInstance): Promise<void> {
 				.leftJoin(checkIns, eq(checkIns.attendeeId, attendees.id))
 				.limit(10)
 				.offset(pageIndex ?? 0 * 10);
-
-				console.log(attendeesByEvent)
 
 			return reply.send({ attendees: attendeesByEvent });
 		},

@@ -12,7 +12,7 @@ CREATE TABLE `attendees` (
 	`email` text NOT NULL,
 	`created_at` integer,
 	`event_id` text NOT NULL,
-	FOREIGN KEY (`event_id`) REFERENCES `events`(`id`) ON UPDATE no action ON DELETE cascade
+	FOREIGN KEY (`event_id`) REFERENCES `events`(`id`) ON UPDATE set null ON DELETE cascade
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `events_slug_unique` ON `events` (`slug`);

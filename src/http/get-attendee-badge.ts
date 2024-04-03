@@ -10,6 +10,8 @@ export async function getAttendeeBadge(app: FastifyInstance): Promise<void> {
 		"/attendees/:attendeeId",
 		{
 			schema: {
+				summary: "Get attendee badge",
+				tags: ["attendee"],
 				params: t.Object({ attendeeId: t.Number(t.String()) }),
 				response: {
 					200: t.Object({

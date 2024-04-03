@@ -10,6 +10,8 @@ export async function getEvent(app: FastifyInstance): Promise<void> {
 		"/events/:eventId",
 		{
 			schema: {
+				summary: "Get event",
+				tags: ["event"],
 				params: t.Object({ eventId: t.String() }),
 				response: {
 					200: t.Object({

@@ -10,6 +10,8 @@ export async function checkIn(app: FastifyInstance): Promise<void> {
 		"/attendees/:attendeeId/check-in",
 		{
 			schema: {
+				summary: "Create check-in",
+				tags: ["check-in"],
 				params: t.Object({ attendeeId: t.Number(t.String()) }),
 				response: {
 					201: t.Null(),

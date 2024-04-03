@@ -11,6 +11,8 @@ export async function registerForEvent(app: FastifyInstance): Promise<void> {
 		"/events/:eventId/attendees",
 		{
 			schema: {
+				summary: "Register an attendee",
+				tags: ["attendee"],
 				body: t.Object({
 					name: t.String({ minLength: 4 }),
 					email: t.String(),

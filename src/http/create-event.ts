@@ -12,6 +12,8 @@ export async function createEvent(app: FastifyInstance): Promise<void> {
 		"/events",
 		{
 			schema: {
+				summary: "Create event",
+				tags: ["event"],
 				body: t.Object({
 					title: t.String({ minLength: 4 }),
 					details: t.Optional(t.Null(t.String())),

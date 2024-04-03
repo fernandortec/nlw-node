@@ -8,7 +8,7 @@ export const checkIns = sqliteTable("check_ins", {
 		.$defaultFn(() => createId()),
 	attendeeId: integer("attendee_id")
 		.notNull()
-		.references(() => attendees.id),
+		.references(() => attendees.id, { onDelete: "set null" }),
 
 	createdAt: integer("created_at", { mode: "timestamp" }),
 });
