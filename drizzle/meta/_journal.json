@@ -15,6 +15,13 @@
       "when": 1712160692138,
       "tag": "0001_parallel_warstar",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1712176386271,
+      "tag": "0002_new_venus",
+      "breakpoints": true
     }
   ]
 }

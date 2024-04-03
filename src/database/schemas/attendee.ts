@@ -1,4 +1,5 @@
 import { events } from "@/database/schemas";
+import { checkins } from "@/database/schemas/check-in";
 import { type InferSelectModel, relations } from "drizzle-orm";
 import {
 	integer,
@@ -33,6 +34,11 @@ export const attendeesRelations = relations(attendees, ({ one }) => ({
 		references: [events.id],
 		relationName: "attendee_event",
 	}),
+	checkin: one(checkins, {
+		fields: [attendees.id],
+		references: [checkins.id],
+		relationName: "attendee_checkin"
+	})
 }));
 
 export type Attendee = InferSelectModel<typeof attendees>;
