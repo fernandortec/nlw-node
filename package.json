@@ -9,6 +9,7 @@
     "migrate": "bun src/database/migrate.ts"
   },
   "dependencies": {
+    "@fastify/type-provider-typebox": "^4.0.0",
     "@libsql/client": "^0.6.0",
     "@paralleldrive/cuid2": "^2.2.2",
     "@sinclair/typebox": "^0.32.20",

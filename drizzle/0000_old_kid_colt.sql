@@ -1,5 +1,5 @@
 CREATE TABLE `events` (
-	`id` text,
+	`id` text NOT NULL,
 	`slug` text NOT NULL,
 	`title` text NOT NULL,
 	`details` text,
