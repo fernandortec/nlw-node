@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "61001d6a-0f57-4ce2-972e-febf88b01d7f",
+  "id": "39a6df7b-ff32-43bb-9c53-fd4bbde625cd",
   "prevId": "7addf80c-a704-49e8-a575-3e31cacfd94c",
   "tables": {
     "events": {
@@ -129,6 +129,13 @@
         "id": {
           "name": "id",
           "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "attendee_id": {
+          "name": "attendee_id",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -143,12 +150,12 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "check_ins_id_attendees_id_fk": {
-          "name": "check_ins_id_attendees_id_fk",
+        "check_ins_attendee_id_attendees_id_fk": {
+          "name": "check_ins_attendee_id_attendees_id_fk",
           "tableFrom": "check_ins",
           "tableTo": "attendees",
           "columnsFrom": [
-            "id"
+            "attendee_id"
           ],
           "columnsTo": [
             "id"

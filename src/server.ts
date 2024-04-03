@@ -1,3 +1,4 @@
+import { checkIn } from "@/http/check-in";
 import { createEvent } from "@/http/create-event";
 import { getAttendeeBadge } from "@/http/get-attendee-badge";
 import { getEvent } from "@/http/get-event";
@@ -12,6 +13,7 @@ app.register(createEvent);
 app.register(registerForEvent);
 app.register(getEvent);
 app.register(getAttendeeBadge)
+app.register(checkIn);
 
 app.listen({ port: 3000 }, () => {
 	console.log("Server is running");
