@@ -8,6 +8,13 @@
       "when": 1712160031816,
       "tag": "0000_curvy_bullseye",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712160692138,
+      "tag": "0001_parallel_warstar",
+      "breakpoints": true
     }
   ]
 }

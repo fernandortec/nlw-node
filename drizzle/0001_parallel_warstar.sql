@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `attendees_email_event_id_idx` ON `attendees` (`event_id`,`email`);
