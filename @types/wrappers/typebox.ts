@@ -1,6 +1,6 @@
 import * as TypeBox from "@sinclair/typebox";
 
-function Nullable<T extends TypeBox.TSchema>(
+function Nullish<T extends TypeBox.TSchema>(
 	property: T,
 	options?: TypeBox.ObjectOptions,
 ): TypeBox.TOptional<TypeBox.TUnion<[T, TypeBox.TNull]>> {
@@ -8,11 +8,20 @@ function Nullable<T extends TypeBox.TSchema>(
 		TypeBox.Union([property, TypeBox.Null()], { ...options }),
 	);
 }
-interface TWithNullable extends Omit<typeof TypeBox, ""> {
-	Nullable: typeof Nullable;
+function Nullable<T extends TypeBox.TSchema>(
+	property: T,
+	options?: TypeBox.ObjectOptions,
+): TypeBox.TUnion<[T, TypeBox.TNull]> {
+	return TypeBox.Union([property, TypeBox.Null()], { ...options });
 }
 
-export const t: TWithNullable = {
+interface TWithNullableAndNullish extends Omit<typeof TypeBox, ""> {
+	Nullable: typeof Nullable;
+	Nullish: typeof Nullish;
+}
+
+export const t: TWithNullableAndNullish = {
 	...TypeBox,
 	Nullable,
+	Nullish,
 };
