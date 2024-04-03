@@ -13,7 +13,10 @@
 
 		// Paths configuration
 
-		"paths": { "@/*": ["./src/*"] },
+		"paths": {
+			"@/*": ["./src/*"],
+			"typebox": ["./src/wrappers/typebox.ts"]
+		},
 
 		// Bundler mode
 		"moduleResolution": "bundler",

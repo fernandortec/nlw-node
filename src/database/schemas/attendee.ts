@@ -5,7 +5,7 @@ import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 export const attendees = sqliteTable("attendees", {
 	id: integer("id").notNull().primaryKey({ autoIncrement: true }),
 	name: text("name").notNull(),
-	email: text("string").notNull(),
+	email: text("email").notNull(),
 	createdAt: integer("created_at", { mode: "timestamp" }),
 
 	eventId: text("event_id")
